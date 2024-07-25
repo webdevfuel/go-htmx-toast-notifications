@@ -1,5 +1,9 @@
 package template
 
+import "github.com/webdevfuel/go-htmx-toast-notifications/template/layout"
+
 templ Hello(name string) {
-	<div>Hello, { name }!</div>
+	@layout.Base() {
+		<div>Hello, { name }!</div>
+	}
 }
