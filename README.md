@@ -1,0 +1,1 @@
+go-htmx-toast-notifications
