@@ -1,5 +1,7 @@
 package layout
 
+import "github.com/webdevfuel/go-htmx-toast-notifications/template/toast"
+
 templ Base() {
 	<!DOCTYPE html>
 	<html lang="en">
@@ -12,6 +14,7 @@ templ Base() {
 			<link href="/static/app.css" rel="stylesheet"/>
 		</head>
 		<body>
+			@toast.Toast()
 			{ children... }
 		</body>
 	</html>
