@@ -5,5 +5,6 @@ import "github.com/webdevfuel/go-htmx-toast-notifications/template/layout"
 templ Hello(name string) {
 	@layout.Base() {
 		<div class="text-2xl">Hello, { name }!</div>
+		@Action("unsent")
 	}
 }
