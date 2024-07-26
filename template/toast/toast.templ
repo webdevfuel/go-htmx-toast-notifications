@@ -21,8 +21,11 @@ templ Toast() {
 						x-transition:leave="transition ease-in duration-300"
 						x-transition:leave-start="opacity-100 scale-100"
 						x-transition:leave-end="opacity-0 scale-90"
-						class="border border-border rounded-lg shadow-sm px-5 py-7 flex items-center gap-2 min-w-[384px]"
+						class="relative border border-border rounded-lg shadow-sm px-5 py-7 flex items-center gap-2 min-w-[384px]"
 					>
+						<button @click="dismiss(toast.id)" class="absolute top-3 right-3">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x text-close hover:text-black"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+						</button>
 						<template x-if="toast.type === 'info'">
 							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info text-info"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
 						</template>
