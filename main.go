@@ -16,5 +16,10 @@ func main() {
 		component := template.Hello("world")
 		component.Render(r.Context(), w)
 	})
+	r.Post("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Hx-Trigger", `{"add-toast": {"message": "Successfully triggered from backend.", "type": "info"}}`)
+		component := template.Action("sent")
+		component.Render(r.Context(), w)
+	})
 	http.ListenAndServe("localhost:3000", r)
 }
