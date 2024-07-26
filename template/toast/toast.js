@@ -23,6 +23,13 @@ document.addEventListener("alpine:init", () => {
       this.toasts.splice(index, 1, { ...toast, show: false });
     },
 
+    dismiss(id) {
+      let that = this;
+      setTimeout(function () {
+        that.remove(id);
+      }, 50);
+    },
+
     toastInit(el) {
       const id = el.getAttribute("id");
       let that = this;
